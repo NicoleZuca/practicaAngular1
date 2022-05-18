@@ -1,0 +1,24 @@
+<!--Header con diferentes ventanas-->
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+  <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <i class="fas fa-bars text-white"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/productos">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/promociones">Promociones</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contacto">Contacto</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet><!--con esta etiqueta indicamos que desde aquí (el componente principal) gestionamos todo el enrutamiento-->

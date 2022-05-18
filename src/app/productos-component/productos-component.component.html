@@ -1,0 +1,14 @@
+<h1 style="text-align: center;">Productos Disponibles</h1>
+
+<app-producto-hijo-c *ngFor="let producto of productos | paginate: { itemsPerPage: 10, currentPage: pagActual }; let i=index" [productoDeLista]="producto" [indice]="i" ></app-producto-hijo-c> <!--Utiliza una variable llamada producto para recorrer el array productos y 
+  declaramos una variable i para que nos ponga un indice delante de cada registro-->
+  <!--Se le dan nombres identificativos a las variables que le queremos pasar al componente hijo-->
+  <!--con app-producto-hijo-c incluimos el componente hijo dentro del padre-->
+ 
+  <pagination-controls (pageChange)="pagActual = $event"></pagination-controls>
+
+<div style="text-align: center;">
+
+  <button class="btn btn-primary" (click)="volverInicio()">Ir a inicio</button>
+
+</div>
