@@ -2,11 +2,12 @@
   <div class="row">
     <div class="col">
       <div>
-
+        <a>
           <!--uso de interpolación con los registros de los productos-->
           {{indice+1}}: {{productoDeLista.nombre}}
           <button class="btn btn-primary" [routerLink]="['/detalle', indice]" (click)="'/detalle'">Ver detalle</button> 
           <!--El router link nos permite enrutar hacia donde nosotros le especifiquemos-->
+        </a>
           <br><br>
       </div>
     </div>

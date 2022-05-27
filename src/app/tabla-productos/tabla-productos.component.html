@@ -1,0 +1,34 @@
+<div class="tablaProductos">
+    <h2 style="text-align: center;">Listado de Productos</h2>
+    <!--{{this.productos}}-->
+    <p-table [value]="productos" [rowHover]="true"
+    [rows]="10" [showCurrentPageReport]="true" [paginator]="true" currentPageReportTemplate="Mostrando {first} al {last} de {totalRecords} registros">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="nombre">Nombre <p-sortIcon field="id"></p-sortIcon></th>
+                <th>Descripción</th>
+                <th>Fecha de ingreso</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-productos>
+            <tr>
+                <td>{{productos.nombre}}</td>
+                <td>{{productos.descripcion}}</td>
+                <td>{{productos.fechaIngreso}}</td>
+                <td>{{productos.precio}}</td>
+                <td>{{productos.cantidad}}</td>
+                 <!--uso de interpolación con los registros de los productos-->
+          
+                 <a>
+                    <!--uso de interpolación con los registros de los productos-->
+                    <!--{{indice}}: {{productoDeLista.nombre}} -->
+                    <button class="btn btn-primary" [routerLink]="['/detalle', indice]" (click)="'/detalle'">Ver detalle</button> 
+                    <!--El router link nos permite enrutar hacia donde nosotros le especifiquemos-->
+                  </a>
+                  <br><br>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

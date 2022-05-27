@@ -20,9 +20,9 @@ export class DetalleComponentComponent implements OnInit {
     //almacenar la información al array productos:Producto[]=[]; que viene de la inyección del servicio
     this.productos=this.productoService.productos;
 
-    this.indice=this.route.snapshot.params['id'];
+    this.indice=this.route.snapshot.params['id']; //crear el indice que viene de la URL
 
-    let producto:Producto=this.productoService.encontrarProducto(this.indice); //encontrar el producto con el id que le estamos enviando
+    let producto:Producto=this.productoService.encontrarProducto(this.indice); //crear una variable tipo producto para almacenar la información ahí y poder encontrar el producto con el id que le estamos enviando
   
     this.cuadroNombre=producto.nombre; //cargar en el formulario los datos del empleado
     this.cuadroDescripcion=producto.descripcion;
@@ -33,24 +33,27 @@ export class DetalleComponentComponent implements OnInit {
   }
 
   volverInicio(){
-
+    //ruta que lo dirige hacia el módulo productos
     this.router.navigate(['productos']);
 
+  }
+
+  volverProductos(){
+    this.router.navigate(['tablaProductos']);
   }
 
   verProducto(){
      
     let miProducto=new Producto(this.cuadroNombre, this.cuadroDescripcion, this.cuadroFechaIngreso, this.cuadroPrecio, this.cuadroCantidad);
 
-    this.router.navigate(['']);
-
   }
 
+  //declaración de las propiedades para el formulario
   cuadroNombre:string="";
   cuadroDescripcion:string="";
   cuadroFechaIngreso:string="";
   cuadroPrecio:number=0;
   cuadroCantidad:number=0;
 
-  indice:number;
+  indice:number; //declarar el indice para usarlo en las rutas para acceder al detalle de cada producto
 }

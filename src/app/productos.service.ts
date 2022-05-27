@@ -28,7 +28,7 @@ export class ProductoService{ //con el export le permitimos que se pueda acceder
     
       ];
 
-      encontrarProducto(indice:number){
+      encontrarProducto(indice:number){ //se le pasa el indice que viene de la URL
 
         let producto:Producto=this.productos[indice];
 

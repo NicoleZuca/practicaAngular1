@@ -4,6 +4,7 @@ export class Producto{ //creación de la clase
     constructor(nombre:string, descripcion:string, fechaIngreso:string, precio:number, cantidad:number){
         
         //los this hacen referencia al campo de clase
+        
         this.nombre=nombre; 
         this.descripcion=descripcion;
         this.fechaIngreso=fechaIngreso;
@@ -18,6 +19,5 @@ export class Producto{ //creación de la clase
     fechaIngreso:string="";
     precio:number=0;
     cantidad:number=0;
-
 
 }
